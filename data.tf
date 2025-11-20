@@ -17,4 +17,10 @@ data "aws_ami" "joindevops" {
         name   = "virtualization-type"
         values = ["hvm"]
     }
+
 }
+
+data "aws_vpc" "default" {
+  default = true
+}
+
