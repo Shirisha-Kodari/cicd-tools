@@ -1,4 +1,14 @@
 ### Jenkins
+# install jenkins
+sudo curl -o /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+# Add required dependencies for the jenkins package
+sudo yum install fontconfig java-21-openjdk -y
+sudo yum install jenkins -y
+sudo systemctl daemon-reload
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
 * install below plugins when you started Jenkins.
 
 * Plugins:
@@ -24,6 +34,9 @@
 * We need to add Sonar credentials for Jenkins to connect with Sonar Server. I am using sonar-auth as ID.
 
 ### Configure Master and Agent
+Create credentials to connect agent
+Install Java in agent
+Select Non verification strategy
 
 ### Configure SonarScanner and SonarQube 
 
@@ -35,7 +48,7 @@
 
 ## SonarQube Quality Gates
 * Bugs What it means: Definite coding errors that will cause the program to behave incorrectly at runtime.
-*  Code Smells What it means: Not actual errors, but poor coding practices that make code hard to maintain or read.
+*  Code Smells What it means:  
 * Coverage What it means: Percentage of code covered by automated tests (unit/integration tests).
 * Issues What it means: The total number of all problems detected = Bugs + Code Smells + Vulnerabilities.
 * Maintainability Rating What it means: A grade (A–E) showing how easy it is to maintain the code.

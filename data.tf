@@ -5,7 +5,7 @@ data "aws_ami" "joindevops" {
 
     filter {
         name   = "name"
-        values = ["RHEL-9-DevOps-Practice"]
+        values = ["Redhat-9-DevOps-Practice"]
     }
 
     filter {
@@ -24,3 +24,6 @@ data "aws_vpc" "default" {
   default = true
 }
 
+# data "aws_ssm_parameter" "vpc_id" {
+#   name = "/${var.project}/${var.environment}/vpc_id"
+# }

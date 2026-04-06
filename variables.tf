@@ -18,3 +18,7 @@ variable "zone_id" {
   description = "description"
 }
 
+# variable "vpc_id" {
+#   type = number
+  
+# }

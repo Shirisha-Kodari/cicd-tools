@@ -2,7 +2,7 @@ resource "aws_instance" "jenkins" {
   ami           = local.ami_id
   instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.main.id]
-  # subnet_id = "subnet-0b95da706f6e62fb6" #replace your Subnet
+  subnet_id = "subnet-0b95da706f6e62fb6" #replace your Subnet
   
 
   # need more for terraform
@@ -24,7 +24,7 @@ resource "aws_instance" "jenkins_agent" {
   instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.main.id]
   #subnet_id = "subnet-084475d91bc25bbc3"   #replace your Subnet
-  # subnet_id = "subnet-0b95da706f6e62fb6"
+  subnet_id = "subnet-0b95da706f6e62fb6"
   # need more for terraform
   root_block_device {
     volume_size = 50  
@@ -84,3 +84,6 @@ resource "aws_route53_record" "jenkins-agent" {
   records = [aws_instance.jenkins_agent.private_ip]
   allow_overwrite = true
 }                 
+
+
+
