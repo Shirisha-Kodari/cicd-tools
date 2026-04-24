@@ -1,6 +1,6 @@
 #!/bin/bash 
  
-#resize disk from 20GB to 50GB       
+#resize disk from 20GB to 50GB        
 growpart /dev/nvme0n1 4  
  
 lvextend -L +10G /dev/mapper/RootVG-homeVol 
