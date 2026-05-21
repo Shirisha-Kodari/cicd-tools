@@ -4,7 +4,7 @@ data "aws_ami" "joindevops" {
     owners = ["973714476881"]  
 
     filter {
-        name   = "name"
+        name   = "name" 
         values = ["Redhat-9-DevOps-Practice"]
     }
 
