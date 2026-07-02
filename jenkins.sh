@@ -6,7 +6,7 @@ growpart /dev/nvme0n1 4
 lvextend -L +10G /dev/RootVG/rootVol
 lvextend -L +10G /dev/mapper/RootVG-varVol 
 lvextend -l +100%FREE /dev/mapper/RootVG-varTmpVol      
-
+ 
 xfs_growfs /
 xfs_growfs /var/tmp 
 xfs_growfs /var
